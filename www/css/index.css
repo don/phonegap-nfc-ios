@@ -113,3 +113,14 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+#buttonDiv {
+    padding: 20px 0;        
+}
+
+button {
+    padding: 10px;        
+    font-size: 1.8em;
+    /* border-radius: 0; */
+    -webkit-appearance: none;
+}

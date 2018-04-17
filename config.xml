@@ -2,10 +2,10 @@
 <widget id="com.megster.phonegap.nfc.io" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PhoneGap NFC</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A sample Apache Cordova application demonstrating PhoneGap-NFC for iOS.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author href="http://github.com/don">
+        Don Coleman
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
@@ -23,4 +23,9 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
+    <plugin name="phonegap-nfc" spec="^0.7.2">
+        <variable name="NFC_USAGE_DESCRIPTION" value="Read NFC Tags" />
+    </plugin>
+    <engine name="ios" spec="^4.5.4" />
 </widget>
