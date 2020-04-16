@@ -8,21 +8,6 @@ var app = {
     onDeviceReady: function() {
         this.receivedDeviceReadyEvent('deviceready');
         app.addButtons();
-
-        // NOTE: the NDEF listener only receives data from the deprecated nfc.beginSession 
-        // Not needed for nfc.scanNdef or nfc.scanTag
-        nfc.addNdefListener (
-            function (nfcEvent) {
-                console.log('NDEF listener received an event');
-                app.showNfcTag(nfcEvent.tag);
-            },
-            function () { // success callback
-                console.log("NDEF listener registered.");
-            },
-            function (error) { // error callback
-                navigator.notification.alert("Error adding NDEF listener " + JSON.stringify(error));
-            }
-        );        
     },
 
     showNfcTag: function(tag) {
@@ -99,18 +84,6 @@ var app = {
 
     },
 
-    beginSession: function() {
-
-        app.clearOutput();
-
-        // this the old way from iOS 11 use scanNdef instead
-        nfc.beginSession(
-            success => console.log('Started session'),
-            error => navigator.notification.alert(error)
-       );
-
-    },
-
     startNDEFScan: async function() {
 
         app.clearOutput();
@@ -142,16 +115,10 @@ var app = {
     },
 
     addButtons: function() {
+        var div = document.querySelector('#buttonDiv');
+
         if (cordova.platformId === 'ios') {
-            var div = document.querySelector('#buttonDiv');
-
-            // This is the old deprecated way, do not use
             var button = document.createElement('button');
-            button.innerText = 'Begin NFC Session';
-            button.onclick = app.beginSession;
-            div.appendChild(button);
-
-            button = document.createElement('button');
             button.innerText = 'Start NDEF Scan';
             button.onclick = app.startNDEFScan;
             div.appendChild(button);
@@ -165,6 +132,10 @@ var app = {
             button.innerText = 'Write to NFC Tag';
             button.onclick = app.writeNdef;
             div.appendChild(button);
+        } else {
+            var p = document.createElement('p');
+            p.innerText = 'This demo is intended for Cordova iOS';
+            div.appendChild(p);
         }
     },
 
