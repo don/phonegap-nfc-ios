@@ -1,8 +1,8 @@
 {
-    "name": "com.megster.phonegap.nfc.io",
+    "name": "com.chariotsolutions.phonegap.nfc.ios",
     "displayName": "PhoneGap NFC",
     "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "description": "A sample Apache Cordova application demonstrating PhoneGap-NFC for iOS",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,10 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "dependencies": {
-        "cordova-ios": "^4.5.4",
-        "cordova-plugin-dialogs": "^2.0.1",
-        "cordova-plugin-whitelist": "^1.3.3",
-        "phonegap-nfc": "^0.7.2"
+        "cordova-ios": "^5.1.1",
+        "cordova-plugin-dialogs": "",
+        "cordova-plugin-whitelist": "",
+        "phonegap-nfc": "^1.1.0"
     },
     "cordova": {
         "plugins": {

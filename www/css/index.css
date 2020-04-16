@@ -41,16 +41,25 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
+    /* text-transform:uppercase; */
     width:100%;
+}
+
+pre {
+    text-align: left;
+}
+
+button {
+    min-width: 225px;
+    margin-bottom: 15px;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    /* background:url(../img/logo.png) no-repeat center top; 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
-    top:50%;
+    /* top:50%; */
     height:50px;                   /* text area height */
     width:225px;                   /* text area width */
     text-align:center;
